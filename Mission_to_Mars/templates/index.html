@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Hot Finds</title>
+  <title>Mission to Mars</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 </head>
 
@@ -13,15 +13,54 @@
   <div class="container">
 
     <div class="jumbotron text-center">
-      <h1>Hot Finds On Craigslist</h1>
-      <p><a class="btn btn-primary btn-lg" href="/scrape" role="button">Find An Awesome Deal!</a></p>
+      <h1>Mission to Mars</h1>
+      <p><a class="btn btn-primary btn-lg" href="/scrape" role="button">Scrape New Data</a></p>
     </div>
 
     <!-- Craigslist Listings -->
-    <div class="row" id="craiglist-listings">
+    <div class="row" id="mars-news">
       <div class="col-md-12">
-        <h4 class="heading">{{listings.price}} {{listings.headline}}</h4>
-        <small>{{listings.hood}}</small>
+        <h2>Latest Mars News</h2>
+        <h3>{{ data.title }}</h3>
+        <p>{{ data.paragraph }}</p>
+      </div>
+    </div>
+
+    <div class="row" id="mars-image-facts">
+      <div class="col-md-8">
+        <h2>Featured Image</h2>
+        <img src = "{{ data.featured_image }}" alt="feat-image">
+      </div>
+
+      <div class="col-md-4">
+        <h3>Mars Facts</h3>
+        {{data.facts}}
+      </div>
+    </div>
+
+    <div class="row" id="mars-hemispheres">
+      <div class="col-md-12">
+        <h2>Mars Hemispheres</h2>
+        
+      </div>
+    </div>
+
+    <div class="row" id="hemisphere-images">
+      <div class="col-md-3">
+        <h2>{{ data.hemispheres[0].title }}</h2>
+        <img src = "{{ data.hemispheres[0].img_url }}" alt="{{ data.hemispheres[0].title }}-image">
+      </div>
+      <div class="col-md-3">
+        <h2>{{ data.hemispheres[1].title }}</h2>
+        <img src = "{{ data.hemispheres[1].img_url }}" alt="{{ data.hemispheres[1].title }}-image">
+      </div>
+      <div class="col-md-3">
+        <h2>{{ data.hemispheres[2].title }}</h2>
+        <img src = "{{ data.hemispheres[2].img_url }}" alt="{{ data.hemispheres[2].title }}-image">
+      </div>
+      <div class="col-md-3">
+        <h2>{{ data.hemispheres[3].title }}</h2>
+        <img src = "{{ data.hemispheres[3].img_url }}" alt="{{ data.hemispheres[3].title }}-image">
       </div>
     </div>
 
