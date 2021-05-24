@@ -55,7 +55,7 @@ def scrape_facts():
     tables = pd.read_html('https://galaxyfacts-mars.com/')
     df = tables[0]
 
-    html_table = df.to_html()
+    html_table = df.to_html(header = False, index = False)
     
     # Close the browser after scraping
     browser.quit()
